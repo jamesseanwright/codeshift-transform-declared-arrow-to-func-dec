@@ -10,6 +10,6 @@ const TRANSFORM_NAME = 'index';
   'implied-return',
   'multiline-body',
   'ignores-anonymous',
-].forEach((fixtureName) =>
+].forEach(fixtureName =>
   defineTest(__dirname, TRANSFORM_NAME, null, fixtureName, { parser: 'ts' }),
 );

@@ -18,9 +18,9 @@ const transform: Transform = (fileInfo, { jscodeshift }) =>
   jscodeshift(fileInfo.source)
     .find(jscodeshift.VariableDeclaration)
     .filter(
-      (n) => n.value.declarations[0].init.type === 'ArrowFunctionExpression',
+      n => n.value.declarations[0].init.type === 'ArrowFunctionExpression',
     )
-    .replaceWith((n) => {
+    .replaceWith(n => {
       const declarator = n.value.declarations[0] as VariableDeclarator;
       const {
         params,
