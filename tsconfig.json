@@ -2,6 +2,7 @@
   "include": ["src"],
   "compilerOptions": {
     "outDir": "dist",
+    "alwaysStrict": true,
     "strict": true,
     "moduleResolution": "node",
     "lib": ["es2020"],

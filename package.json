@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write jest.config*js 'src/**/*.ts'",
+    "format": "prettier --write jest.config.js src/index.ts 'src/__tests__/**/*.ts'",
+    "build": "tsc -p .",
     "test": "jest"
   },
   "keywords": [],
