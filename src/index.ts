@@ -9,12 +9,19 @@ const transform: Transform = (fileInfo, { jscodeshift }) =>
 
       const { params, body, generator, async } = declarator.init as ArrowFunctionExpression;
 
-      return jscodeshift.functionDeclaration(
+      const declaration = jscodeshift.functionDeclaration(
         jscodeshift.identifier((declarator.id as Identifier).name),
         params,
         body as BlockStatement,
         generator,
       );
+
+      /* There doesn't seem to be a parameter
+       * for functionDeclaration() to create
+       * async functions :/ */
+      declaration.async = async;
+
+      return declaration;
     })
     .toSource();
 
