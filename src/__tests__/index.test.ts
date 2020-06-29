@@ -9,6 +9,7 @@ const TRANSFORM_NAME = 'index';
   'async',
   'implied-return',
   'multiline-body',
+  'ignores-anonymous',
 ].forEach(fixtureName => defineTest(
   __dirname,
   TRANSFORM_NAME,
