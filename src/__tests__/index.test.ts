@@ -1,5 +1,6 @@
 jest.autoMockOff();
 
+// @ts-ignore: missing from @types/jscodeshift :(
 import { defineTest } from 'jscodeshift/dist/testUtils';
 
 const TRANSFORM_NAME = 'index';

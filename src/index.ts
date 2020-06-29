@@ -4,21 +4,27 @@ import {
   Identifier,
   BlockStatement,
   VariableDeclarator,
-  Literal,
   Node,
   JSCodeshift,
 } from 'jscodeshift';
 
 const isImpliedReturn = (body: Node) => body.type !== 'BlockStatement';
 
-const buildBlockStatement = (jscodeshift: JSCodeshift, impliedBody: Node) =>
-  jscodeshift.blockStatement([jscodeshift.returnStatement(impliedBody)]);
+/* Implied body could be more than just an identifier,
+ * but interrop between the overlapping jscodeshift/
+ * ast-types types is an absolute PITA. */
+const buildBlockStatement = (
+  jscodeshift: JSCodeshift,
+  impliedBody: Identifier,
+) => jscodeshift.blockStatement([jscodeshift.returnStatement(impliedBody)]);
 
 const transform: Transform = (fileInfo, { jscodeshift }) =>
   jscodeshift(fileInfo.source)
     .find(jscodeshift.VariableDeclaration)
     .filter(
-      n => n.value.declarations[0].init.type === 'ArrowFunctionExpression',
+      n =>
+        (n.value.declarations[0] as VariableDeclarator)?.init?.type ===
+        'ArrowFunctionExpression',
     )
     .replaceWith(n => {
       const declarator = n.value.declarations[0] as VariableDeclarator;
@@ -30,7 +36,7 @@ const transform: Transform = (fileInfo, { jscodeshift }) =>
       } = declarator.init as ArrowFunctionExpression;
 
       const body = isImpliedReturn(rawBody)
-        ? buildBlockStatement(jscodeshift, rawBody)
+        ? buildBlockStatement(jscodeshift, rawBody as Identifier)
         : (rawBody as BlockStatement);
 
       const declaration = jscodeshift.functionDeclaration(
