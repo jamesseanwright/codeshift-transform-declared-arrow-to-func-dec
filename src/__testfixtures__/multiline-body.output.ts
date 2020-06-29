@@ -4,10 +4,7 @@ function f() {
   const c = 3;
 
   function sum(seed: number) {
-    return [a, b, c].reduce(
-      (total, n) => total + n,
-      seed,
-    );
+    return [a, b, c].reduce((total, n) => total + n, seed);
   }
 
   return sum(0);
