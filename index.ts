@@ -3,6 +3,7 @@ import { Transform, ArrowFunctionExpression, Identifier, BlockStatement, Variabl
 const transform: Transform = (fileInfo, { jscodeshift }) =>
   jscodeshift(fileInfo.source)
     .find(jscodeshift.VariableDeclaration)
+    .filter(n => n.value.declarations[0].init.type === 'ArrowFunctionExpression')
     .replaceWith(n => {
       const declarator = n.value.declarations[0] as VariableDeclarator;
 

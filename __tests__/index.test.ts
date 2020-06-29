@@ -13,5 +13,3 @@ const TRANSFORM_NAME = 'index';
   fixtureName,
   { parser: 'ts' },
 ));
-
-defineTest(__dirname, 'index', null, 'simple', { parser: 'ts' });
