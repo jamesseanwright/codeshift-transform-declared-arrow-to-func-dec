@@ -1,3 +1,3 @@
-export async function f() {
+export function f() {
   return Promise.resolve('Yay!');
 }

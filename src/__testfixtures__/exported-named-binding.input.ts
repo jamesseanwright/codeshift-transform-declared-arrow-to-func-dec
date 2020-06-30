@@ -1,1 +1,1 @@
-export const f = async () => Promise.resolve('Yay!');
+export const f = () => Promise.resolve('Yay!');
