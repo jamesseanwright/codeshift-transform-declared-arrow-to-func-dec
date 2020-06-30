@@ -1,5 +1,6 @@
 const get = async () => {
-  Promise.resolve('Data!');
+  const res = await fetch('/foo');
+  return res.json();
 };
 
 /* To stop TS complaining about block-
