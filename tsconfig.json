@@ -5,7 +5,7 @@
     "alwaysStrict": true,
     "strict": true,
     "moduleResolution": "node",
-    "lib": ["es2020"],
+    "lib": ["es2020", "DOM"],
     "target": "ES6",
     "module": "CommonJS",
     "removeComments": true,
