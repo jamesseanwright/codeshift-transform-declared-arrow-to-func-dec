@@ -1,5 +1,7 @@
 # Codeshift Declared Arrow Expression to Function Declaration Transform
 
+![CI](https://github.com/jamesseanwright/codeshift-transform-declared-arrow-to-func-dec/workflows/CI/badge.svg?branch=master)
+
 [jscodeshift](https://github.com/facebook/jscodeshift) transform to convert arrow function expressions, assigned to variable declarations, into traditional function declarations
 
 Before:
