@@ -30,6 +30,13 @@ add(foo, bar);
 
 This transform applies to any arrow expression that is assigned to a variable (`var`/`let`/`const`) **at the point of declaration**.
 
+## Usage
+
+```sh
+$ npm i -DE codeshift-transform-declared-arrow-to-func-dec
+$ jscodeshift -t node_modules/codeshift-transform-declared-arrow-to-func-dec/dist/index.js some-source-file.js
+```
+
 ## Examples
 
 ### Implied/implicit return

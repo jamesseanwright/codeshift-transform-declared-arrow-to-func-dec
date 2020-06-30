@@ -1,5 +1,5 @@
 {
-  "name": "var-to-func",
+  "name": "codeshift-transform-declared-arrow-to-func-dec",
   "version": "1.0.0",
   "description": "jscodeshift transform to convert arrow function expressions, assigned to variables at the point of declaration, into traditional function declarations",
   "main": "dist/index.js",
