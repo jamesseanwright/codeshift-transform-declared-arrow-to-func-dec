@@ -7,7 +7,8 @@
     "lint": "eslint jest.config.js src/index.ts 'src/__tests__/**/*.ts'",
     "format": "prettier --write jest.config.js src/index.ts 'src/__tests__/**/*.ts'",
     "build": "tsc -p .",
-    "test": "jest"
+    "test": "jest",
+    "test:sanity": "jscodeshift -d -p --parser=ts -t dist/index.js src/__testfixtures__/simple.input.ts"
   },
   "keywords": [],
   "author": "",
