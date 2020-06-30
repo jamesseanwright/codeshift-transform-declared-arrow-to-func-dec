@@ -1,8 +1,8 @@
 {
   "name": "var-to-func",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "jscodeshift transform to convert arrow function expressions, assigned to variables at the point of declaration, into traditional function declarations",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint jest.config.js src/index.ts 'src/__tests__/**/*.ts'",
     "format": "prettier --write jest.config.js src/index.ts 'src/__tests__/**/*.ts'",
