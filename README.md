@@ -122,10 +122,28 @@ function f() {
 }
 ```
 
-<!--
+## Unsupported functionality
+
+The following examples **are not supported** by the transform (but **might** be introduced in the next major version).
+
+### Deferred function assignments
+
+```ts
 type F = (x: number) => number;
 
 let f: F;
 
-f = x => x + 1;
--->
+f = x => x + 1; // will not be transformed!
+```
+
+### Rebinding `this`
+
+```ts
+function f(this: string) {
+  const g = () => { // Will be transformed into a function declaration...
+    console.log(this); // ...but `this` will no longer refer to f's context!
+  };
+
+  g.call('Hello!');
+}
+```
