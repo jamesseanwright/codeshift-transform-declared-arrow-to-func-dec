@@ -4,3 +4,4 @@ src
 .prettierrc
 jest.config.js
 tsconfig.json
+README.md
