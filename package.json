@@ -11,8 +11,8 @@
     "test": "jest",
     "test:sanity": "jscodeshift -d -p --parser=ts -t dist/index.js src/__testfixtures__/simple.input.ts"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["codeshift", "jscodeshift", "transform", "declaration", "arrow functions", "arrow", "expression", "function"],
+  "author": "James Wright <hi@james.engineering>",
   "license": "GPL-3.0-only",
   "devDependencies": {
     "@types/jest": "26.0.3",
