@@ -28,4 +28,4 @@ jobs:
         npm test
     - name: Sanity test
       run: |
-        npm test:sanity
+        npm run test:sanity
