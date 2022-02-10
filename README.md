@@ -145,7 +145,9 @@ function f() {
   const g = () => { // Will be transformed into a function declaration...
     console.log(this); // ...but `this` will no longer refer to f's context!
   };
-
-  g.call('Hello!');
+  
+  g();
 }
+
+f.call('Hello!');
 ```
