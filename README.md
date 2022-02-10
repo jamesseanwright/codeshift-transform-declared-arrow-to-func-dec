@@ -141,7 +141,7 @@ f = x => x + 1; // will not be transformed!
 ### Rebinding `this`
 
 ```ts
-function f(this: string) {
+function f() {
   const g = () => { // Will be transformed into a function declaration...
     console.log(this); // ...but `this` will no longer refer to f's context!
   };
